@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title><?= $data['judul']; ?></title>
-    <link rel="stylesheet" type="text/css" href="<?= BASE_URL; ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= BASE_URL; ?>/css/bootstrap.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -16,7 +16,7 @@
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav ml-auto">
 				<a class="nav-item nav-link active" href="<?= BASE_URL; ?>">Home <span class="sr-only">(current)</span></a>
-				<a class="nav-item nav-link" href="<?= BASE_URL; ?>/mahasiswa">Siswa</a>
+				<a class="nav-item nav-link" href="<?= BASE_URL; ?>/siswa">Siswa</a>
 				<a class="nav-item nav-link" href="<?= BASE_URL; ?>/about">Kelas</a>
 			</div>
 		</div>
