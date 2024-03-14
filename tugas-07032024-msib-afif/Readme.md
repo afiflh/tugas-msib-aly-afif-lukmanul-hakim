@@ -2,7 +2,7 @@
 
 Halaman home/index
 
-![Screenshot_home/index](/tugas-07032024-msib-afif/public/img/school.jpg)
+![Screenshot_home/index](/tugas-07032024-msib-afif/public/img/ss1.png)
 
 Halaman home/more
 
