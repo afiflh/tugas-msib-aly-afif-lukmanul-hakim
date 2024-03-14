@@ -17,7 +17,7 @@
 			<div class="navbar-nav ml-auto">
 				<a class="nav-item nav-link active" href="<?= BASE_URL; ?>">Home <span class="sr-only">(current)</span></a>
 				<a class="nav-item nav-link" href="<?= BASE_URL; ?>/siswa">Siswa</a>
-				<a class="nav-item nav-link" href="<?= BASE_URL; ?>/about">Kelas</a>
+				<a class="nav-item nav-link" href="<?= BASE_URL; ?>/kelas">Kelas</a>
 			</div>
 		</div>
 	</div>

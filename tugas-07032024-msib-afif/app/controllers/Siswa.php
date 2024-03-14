@@ -2,9 +2,14 @@
 
 class Siswa extends Controller {
 
-    public function index() {
-        $data['judul'] = 'Siswa';
-        $data['siswa'] = $this->model('Siswa_model')->getAllSiswa();
+    public function index($page = 1){
+        $limit = 5;
+        $start = ($page - 1) * $limit;
+        $total_siswa = $this->model('Siswa_model')->getTotalSiswa();
+        $total_pages = ceil($total_siswa / $limit);
+        $data['judul'] = 'Daftar Siswa';
+        $data['siswa'] = $this->model('Siswa_model')->getAllSiswa($limit, $start);
+        $data['total_pages'] = $total_pages;
         $this->view('templates/header', $data);
         $this->view('siswa/index', $data);
         $this->view('templates/footer');
@@ -42,4 +47,23 @@ class Siswa extends Controller {
         $this->view('templates/footer');
     }
     
+    public function update($nis) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if ($this->model('Siswa_model')->updateDataSiswa($_POST) > 0) {
+                Flasher::setFlash('berhasil', 'diupdate', 'success');
+                header('Location: ' . BASE_URL . '/siswa');
+                exit;
+            } else {
+                Flasher::setFlash('gagal', 'diupdate', 'danger');
+                header('Location: ' . BASE_URL . '/siswa');
+                exit;
+            }
+        } else {
+            $data['judul'] = 'Ubah Data Siswa';
+            $data['siswa'] = $this->model('Siswa_model')->getSiswaByNis($nis);
+            $this->view('templates/header', $data);
+            $this->view('siswa/update', $data);
+            $this->view('templates/footer');
+        }
+    }
 }

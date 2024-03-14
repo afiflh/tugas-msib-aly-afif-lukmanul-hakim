@@ -14,9 +14,23 @@
     </div>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-success btnAdd" data-toggle="modal" data-target="#formModal">
+    <button type="button" class="btn btn-success btnAdd shadow" data-toggle="modal" data-target="#formModal">
         <strong>+</strong> Tambah Siswa
     </button>
+
+    <div class="row mt-3 justify-content-end">
+        <div class="col-md-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    <?php for($i = 1; $i <= $data['total_pages']; $i++): ?>
+                        <li class="page-item"><a class="page-link" href="<?= BASE_URL; ?>/siswa/index/<?= $i; ?>"><?= $i; ?></a></li>
+                    <?php endfor; ?>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    
 
     <div class="row">
         <div class="col-md-12 mt-4">
@@ -41,7 +55,7 @@
                             <td style="width: 200px;"><?= $siswa['alamat']; ?></td>
                             <td>
                                 <a class="btn btn-primary btn-sm" href="<?= BASE_URL; ?>/siswa/detail/<?= $siswa['nis']; ?>" role="button">Detail</a>
-                                <a class="btn btn-warning btn-sm" href="<?= BASE_URL; ?>/siswa/edit/<?= $siswa['nis']; ?>" role="button">Ubah</a>
+                                <a class="btn btn-warning btn-sm" href="<?= BASE_URL; ?>/siswa/update/<?= $siswa['nis']; ?>" role="button">Ubah</a>
                                 <a class="btn btn-danger btn-sm" href="<?= BASE_URL; ?>/siswa/delete/<?= $siswa['nis']; ?>" role="button" onclick="return confirm('YAKIN?');">Hapus</a>
                             </td>
                         </tr>
